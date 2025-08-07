@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Matrix Digital Rain</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <canvas id="matrix-canvas"></canvas>
+
+    <div id="controls" class="controls collapsed">
+      <button id="toggle-controls" class="toggle" aria-expanded="false" aria-controls="controls-form">▲ Show Controls</button>
+      <form id="controls-form">
+        <div class="row">
+          <label>
+            Characters
+            <input id="chars" type="text" value="アァカサタナハマヤャラワガザダバパイィキシチニヒミリヰギジヂビピウゥクスツヌフムユュルグズヅブプエェケセテネヘメレヱゲゼデベペオォコソトノホモヨョロゴゾドボポ012345789ABCDEFGHIJKLMNOPQRSTUVWXYZ" />
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            Font Size (px)
+            <input id="fontSize" type="range" min="8" max="40" step="1" value="16" />
+          </label>
+          <output id="fontSizeOut">16</output>
+        </div>
+        <div class="row">
+          <label>
+            Speed (drops/sec)
+            <input id="speed" type="range" min="0.2" max="5" step="0.1" value="1.5" />
+          </label>
+          <output id="speedOut">1.5</output>
+        </div>
+        <div class="row">
+          <label>
+            Character Change (Hz)
+            <input id="charRate" type="range" min="0" max="30" step="0.001" value="8" />
+          </label>
+          <output id="charRateOut">8</output>
+        </div>
+        <div class="row">
+          <label>
+            Density (streams × columns)
+            <input id="density" type="range" min="0.1" max="8" step="0.1" value="1.5" />
+          </label>
+          <output id="densityOut">1.5</output>
+        </div>
+        <div class="row two">
+          <label>
+            Trail Fade
+            <input id="fade" type="range" min="0.02" max="0.3" step="0.01" value="0.08" />
+          </label>
+          <output id="fadeOut">0.08</output>
+          <label>
+            Head Glow
+            <input id="glow" type="range" min="0" max="1" step="0.05" value="0.6" />
+          </label>
+          <output id="glowOut">0.6</output>
+        </div>
+        <div class="row two">
+          <label>
+            Background
+            <input id="bgColor" type="color" value="#000000" />
+          </label>
+          <label>
+            Trail Color
+            <input id="trailColor" type="color" value="#00ff88" />
+          </label>
+          <label>
+            Head Color
+            <input id="headColor" type="color" value="#ccffcc" />
+          </label>
+        </div>
+        <div class="row">
+          <label>
+            Presets
+            <select id="presetSelect"></select>
+          </label>
+          <label>
+            Preset Name
+            <input id="presetName" type="text" placeholder="e.g., Slow Minimal" />
+          </label>
+          <div class="buttons">
+            <button id="savePreset" type="button">Save Preset</button>
+            <button id="deletePreset" type="button">Delete</button>
+          </div>
+        </div>
+        <div class="row">
+          <label class="checkbox">
+            <input id="paused" type="checkbox" /> Pause
+          </label>
+          <label class="checkbox">
+            <input id="preventOverlap" type="checkbox" checked /> Prevent Overlap (grid-locked)
+          </label>
+          <button id="reset" type="button">Reset</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="app.js" type="module"></script>
+  </body>
+  </html>
+
+

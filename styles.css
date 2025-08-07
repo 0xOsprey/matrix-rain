@@ -1,0 +1,113 @@
+:root {
+  --bg: #000;
+  --trail: #00ff88;
+  --head: #ccffcc;
+}
+
+* { box-sizing: border-box; }
+html, body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: #cbd5e1;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+}
+
+#matrix-canvas {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+.controls {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  backdrop-filter: blur(6px);
+  /* Use a broadly supported backdrop tone instead of color-mix for compatibility */
+  background: rgba(0, 0, 0, 0.6);
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 10px 12px 12px;
+  transition: transform 200ms ease, box-shadow 200ms ease;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.35);
+}
+
+.controls.collapsed form { display: none; }
+
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font: inherit;
+  color: #e2e8f0;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+.toggle:hover { background: rgba(255,255,255,0.1); }
+
+form {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 720px) {
+  form { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1080px) {
+  form { grid-template-columns: repeat(3, 1fr); }
+}
+
+.row { display: contents; }
+.row.two { grid-column: 1 / -1; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+form .buttons { display: flex; gap: 8px; align-items: end; }
+
+label { display: flex; flex-direction: column; gap: 6px; font-size: 12px; color: #94a3b8; }
+input[type="text"], input[type="range"], input[type="color"], button {
+  width: 100%;
+}
+input[type="text"] {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: #e2e8f0;
+  border-radius: 8px;
+  padding: 10px 12px;
+}
+input[type="range"] { accent-color: var(--trail); }
+input[type="color"] { height: 38px; border: none; background: transparent; }
+
+output { align-self: end; justify-self: start; color: #e2e8f0; }
+button#reset {
+  width: auto;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+button#reset:hover { background: rgba(255,255,255,0.1); }
+
+button#savePreset, button#deletePreset {
+  width: auto;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  color: #e2e8f0;
+  cursor: pointer;
+}
+button#savePreset:hover, button#deletePreset:hover { background: rgba(255,255,255,0.1); }
+
+.checkbox { flex-direction: row; align-items: center; gap: 10px; }
+
+
