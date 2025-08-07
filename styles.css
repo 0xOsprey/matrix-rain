@@ -1,7 +1,7 @@
 :root {
   --bg: #000;
-  --trail: #00ff88;
-  --head: #ccffcc;
+  --trail: #00e100;
+  --head: #00e100;
 }
 
 * { box-sizing: border-box; }

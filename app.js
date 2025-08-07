@@ -418,8 +418,8 @@ resetBtn.addEventListener('click', () => {
   fadeInput.value = '0.08';
   glowInput.value = '0.6';
   bgColorInput.value = '#000000';
-  trailColorInput.value = '#00ff88';
-  headColorInput.value = '#ccffcc';
+  trailColorInput.value = '#00e100';
+  headColorInput.value = '#00e100';
   charsInput.value = charsInput.defaultValue;
 
   // Update state and outputs
